@@ -18,11 +18,15 @@ class Dictionary
 		@keywords = entry.keys
 	end
 
+	def include?(word)
+		return @keywords.include?(word)
+	end
+
+
 end
 
 =begin
 	
-Use entry.keys to get key from entry.
-Use entry.values to get value
+
 	
 =end
