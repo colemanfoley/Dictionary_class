@@ -7,7 +7,14 @@ class Dictionary
 	end
   
 	def add(entry)
-		@entries.merge!(entry)
+		if entry.is_a? Hash
+			@entries.merge!(entry)
+		elsif entry.is_a? String
+			temporary_hash = {entry => nil}
+			entry = temporary_hash
+			@entries.merge!(entry)
+		end
+
 		@keywords = entry.keys
 	end
 
